@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <title>Flickr Searcher</title>
+    <link rel="stylesheet" href="css/main.css">
+  	<link rel="stylesheet" href="css/normalize.css">
+  	<link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
     <div>
       <h1>Flickr Searcher</h1>
-      <p>Search for Flickr photos by tag</p>
+      <h2>Search for Flickr photos by tag</h2>
     </div>
     <div ng-controller="flickrController">
       <form ng-submit="getPhotos()">
