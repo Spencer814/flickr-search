@@ -3,29 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <title>Flickr Searcher</title>
-    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
-    <script src="js/app.js"></script>
+  	<link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css">
+  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   </head>
 
   <body>
     <div>
       <h1>Flickr Searcher</h1>
-      <p>Search for Flickr photos by tag</p>
+      <h2>Search Flickr for photos</h2>
     </div>
     <div ng-controller="flickrController">
-      <form ng-submit="getPhotos(search_tag)">
-        <input type="text" name="search_tag" ng-model="search_tag" required="" />
+      <form ng-submit="getPhotos()">
+        <input type="text" id="search-term" name="search_tag" ng-model="search_tag" required="" />
         <button type="submit" id="submit" >Submit</button>
       </form>
       <div class="results" ng-if="results">
-        <h2>We found {{ image.length }} results for {{ search_tag }}</h2>
-        <div ng-repeat="image in response.data.photos.photo">
-          <div id="imgThumbs">
-            <img ng-src="https://farm{{image.farm}}.staticflickr.com/{{image.server}}/{{image.id}}_{{image.secret}}_m.jpg" alt="" />
-          </div>
+        <h2>Here are {{ results.length }} results for {{ search_tag }}</h2>
+        <div>
+          <ul>
+            <div ng-repeat="results in results">
+              <li>
+                <p><a href="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg" target="_blank">https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg</a></p>
+                <img ng-src="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg"/>
+                <h4>{{ results.title }}</h4>
+              </li>
+            </div>
+          </ul>
         </div>
       </div>
     </div>
+    <script data-require="angular.js@1.5.3" data-semver="1.5.3" src="https://code.angularjs.org/1.5.3/angular.js"></script>
+    <script src="js/app.js"></script>
   </body>
 
 </html>

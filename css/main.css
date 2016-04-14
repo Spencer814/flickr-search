@@ -10,7 +10,7 @@ h1 {
   font-size: 1.5em;
   color: #3f3034;
   text-shadow: 1px 1px 1px #ff9900;
-  box-shadow: 0 8px 6px -6px #a59f74;
+  box-shadow: 0 8px 6px -6px #663d00;
 }
 h2 {
   color: #ff9900;
@@ -22,30 +22,34 @@ p {
 }
 a:hover {
   font-weight: bold;
-  text-shadow: 1px 1px 1px #000, 3px 3px 5px #ff9900;
+  text-shadow: 1px 1px 1px #ffebcc, 3px 3px 5px #fff5e6;
 }
 ul {
   list-style-type: none;
 }
 li {
-  background-color: #ff9900;
-  width: 600px;
-  height: 500px;
+  background-color: #663d00;
+  width: 580px;
+  height: auto;
   border-radius: 15px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #3f3034;
+  border: 2px solid #3f3034;
   margin: 2em auto;
 }
-li > p {
-  background-color: #a59f74;
-  border-radius: 15px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #3f3034;
+li > h4 {
+  background-color: #ff9900;
+  border-radius: 12px;
+  border: 1px solid #3f3034;
   vertical-align: middle;
   padding: 1em;
-  margin-top: 0;
+  margin: 0;
+}
+li > p {
+  background-color: #ffd699;
+  border-radius: 12px;
+  border: 1px solid #3f3034;
+  vertical-align: middle;
+  padding: 1em;
+  margin: 0;
 }
 input#search-term {
   text-align: center;
@@ -53,6 +57,9 @@ input#search-term {
 img {
   max-width: 480px;
   max-height: 400px;
+  border: 2px solid #3f3034;
+  border-radius: 12px;
+  margin: 1em auto;
 }
 @media only screen and (max-width: 600px) {
   h1 {
