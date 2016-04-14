@@ -33,6 +33,7 @@ li {
   height: auto;
   border-radius: 15px;
   border: 2px solid #3f3034;
+  box-shadow: 0px 10px 30px black;
   margin: 2em auto;
 }
 li > h4 {

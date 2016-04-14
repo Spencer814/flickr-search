@@ -25,8 +25,7 @@
           <ul>
             <div ng-repeat="results in results">
               <li>
-                <p><a href="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg" target="_blank">https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg</a></p>
-                <img ng-src="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg"/>
+                <a href="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg" target="_blank"><img ng-src="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg"/></a>
                 <h4>{{ results.title }}</h4>
               </li>
             </div>
