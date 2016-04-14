@@ -3,30 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <title>Flickr Searcher</title>
-    <link rel="stylesheet" href="css/main.css">
   	<link rel="stylesheet" href="css/normalize.css">
-  	<link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
-  	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+  	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css">
+  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   </head>
 
   <body>
     <div>
       <h1>Flickr Searcher</h1>
-      <h2>Search for Flickr photos by tag</h2>
+      <h2>Search Flickr for photos</h2>
     </div>
     <div ng-controller="flickrController">
       <form ng-submit="getPhotos()">
-        <input type="text" name="search_tag" ng-model="search_tag" required="" />
+        <input type="text" id="search-term" name="search_tag" ng-model="search_tag" required="" />
         <button type="submit" id="submit" >Submit</button>
       </form>
       <div class="results" ng-if="results">
-        <h2>There are {{ results.length }} results for {{ search_tag }}</h2>
+        <h2>Here are {{ results.length }} results for {{ search_tag }}</h2>
         <div>
           <ul>
-            <div ng-repeat="image in results.photos.photo">
+            <div ng-repeat="results in results">
               <li>
-                <img ng-src="https://farm{{ results.farm }}.staticflickr.com/{{ image.server }}/{{ image.id }}_{{ image.secret }}" alt="" />
-                <h3>{{ search_tag.title }}</h3>
+                <p><a href="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg" target="_blank">https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg</a></p>
+                <img ng-src="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg"/>
+                <h4>{{ results.title }}</h4>
               </li>
             </div>
           </ul>

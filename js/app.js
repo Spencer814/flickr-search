@@ -20,8 +20,16 @@ angular.module('flickrApp', [])
       params: params
     })
     .then(function(response){
-      $scope.results = response.data.photos.photo;
-      console.log($scope.results);
+      $scope.results = response.data.photos.photo,
+
+      // var object = new Array(100);
+      // for(var i=0; i<object.length; i++){
+      //   object[i] = i + 1;
+      // };
+
+      $scope.image = "https://farm" + $scope.results[0].farm + ".staticflickr.com/" + $scope.results[0].server + "/" + $scope.results[0].id + "_" + $scope.results[0].secret + ".jpg",
+      console.log($scope.image);
+      console.log($scope.results[0].title);
     },
     function(response){
       alert('error');
