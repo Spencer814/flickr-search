@@ -19,14 +19,14 @@
         <input type="text" id="search-term" name="search_tag" ng-model="search_tag" required="" />
         <button type="submit" id="submit" >Submit</button>
       </form>
-      <div class="results" ng-if="results">
+      <div class="results" ng-if="results" ng-cloak>
         <h2 ng-cloak>Here are {{ results.length }} results for {{ search_tag }}</h2>
         <div>
           <ul>
-            <div ng-repeat="results in results">
-              <li>
+            <div ng-repeat="results in results" ng-cloak>
+              <li ng-cloak>
                 <a href="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg" target="_blank"><img ng-src="https://farm{{results.farm}}.staticflickr.com/{{results.server}}/{{results.id}}_{{results.secret}}.jpg"/></a>
-                <h4>{{ results.title }}</h4>
+                <h4 ng-cloak>{{ results.title }}</h4>
               </li>
             </div>
           </ul>
